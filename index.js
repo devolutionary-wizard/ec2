@@ -11,6 +11,10 @@ let item = [
 ];
 
 app.get("/test", (req, res) => res.json(item));
+app.post("/add", (req, res) => {
+  item.push({ id: 4, title: "NodeJS" });
+  return res.json(item);
+});
 
 app.listen(4000, () => {
   console.log("Server is running on port 4000");
